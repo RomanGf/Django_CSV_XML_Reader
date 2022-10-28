@@ -1,0 +1,14 @@
+.header {
+  padding: 10px;
+  text-align: center;
+  background: #a1dfd2;
+  color: rgb(39, 38, 38);
+  font-size: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+/* #logout{
+  justify-content: right
+} */
