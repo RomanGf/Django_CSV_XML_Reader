@@ -8,6 +8,7 @@
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
 
     <link
       rel="stylesheet"
@@ -17,15 +18,18 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
     
     <title>{% block title %}{% endblock title %}</title>
-    
+    {% block css %}{% endblock css %}
     <link rel="stylesheet" href="{% static 'header.css' %}">
   </head>
   <body>
-    <div class="header">
-      <div>Hello</div>
-      <div id="logout">
-        <span><a href="{% url 'users:logout' %}">Log out</a></span>
-      </div>
+      <div class="navbar-top">
+        <ul>
+            <li>
+                <a href="{% url 'users:logout' %}">
+                    <i class="fa fa-sign-out-alt fa-2x"></i>
+                </a>
+            </li>
+        </ul>
     </div>
     <div class="ui container">{% block content %} {% endblock content %}</div>
   </body>

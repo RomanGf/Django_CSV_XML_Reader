@@ -15,7 +15,9 @@ Here's the ultimate Django gitignore#
 __pycache__
 db.sqlite3
 media
-
+htmlcov
+.coverage
+.coveragerc
 # Backup files # 
 *.bak 
 

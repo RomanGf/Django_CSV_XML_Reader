@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}
+main page
+{% endblock title %} 
+
+
+{% block content %}
+<form action="" method="POST" class="ui form" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form }}
+    <button type="submit" class="ui button primary">Confirm</button>
+</form>
+{% if users %}
+    {% for user in users %}
+    <div class="main">
+        <div class="card">
+          <div class="card-body">
+            <i class="fa fa-pen fa-xs edit"></i>
+            <table>
+              <tbody>
+                <tr>
+                  <td>Name: {{ user.username }}</td>
+                </tr>
+                <tr>
+                  <td>Date joined: {{ user.date_joined}}</td>
+                </tr>
+      
+                <tr>
+                  <td><img src="{{user.avatar}}" width="40%" height="40%" /></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+{% endif %}
+{% endblock content %} 

@@ -2,8 +2,8 @@ from django.db import models
 
 
 class File(models.Model):
-    file_name_csv = models.FileField(upload_to='files')
-    file_name_xml = models.FileField(upload_to='files')
+    file_name_csv = models.FileField(upload_to='files/file_csv')
+    file_name_xml = models.FileField(upload_to='files/file_xml')
     uploaded = models.DateTimeField(auto_now_add=True)
     activated = models.BooleanField(default=False)
     

@@ -1,0 +1,35 @@
+{% extends 'base.html' %} 
+{% load static %}
+
+{% block title %}
+  Profile 
+{% endblock title %}
+
+{% block css %}
+  <link rel="stylesheet" href="{% static 'header.css' %}" />
+{% endblock css %} 
+
+{% block content %}
+<div class="main">
+  <h2>IDENTITY</h2>
+  <div class="card">
+    <div class="card-body">
+      <i class="fa fa-pen fa-xs edit"></i>
+      <table>
+        <tbody>
+          <tr>
+            <td>Name: {{ user.username }}</td>
+          </tr>
+          <tr>
+            <td>Date joined: {{ user.date_joined}}</td>
+          </tr>
+
+          <tr>
+            <td><img src="{{avatar}}" width="40%" height="40%" /></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+{% endblock content %}
