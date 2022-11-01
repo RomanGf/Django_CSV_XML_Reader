@@ -1,30 +1,17 @@
-## 1) Створюєм віртуальне середовище
-> python3 -m venv venv
+## 1) Запускаєм  docker-compose
+> docker-compose up
+## 2) Створюєм адміна за допомогою команди
 
-## 2) Встановлюєм залежності
-> pip3 install -r requirements.txt
+>docker-compose run web python3 manage.py createsuperuser
 
-
-## 3) Виконуєм міграції
->python3 manage.py makemigrations 
-
-
->python3 manage.py migrate
-## 4) Створюєм адміна за допомогою команди
-
->python3 manage.py createsuperuser
-
-## 5) Добавляєм групи через адмінку, заходим по url, використовуючи адміна, створеного в пункті 4 та переходимо на вкладку Authentication and Authorization вибираєм Group і створюєм 2 групи
+## 3) Добавляєм групи через адмінку, заходим по url, використовуючи адміна, створеного в пункті 2 та переходимо на вкладку Authentication and Authorization вибираємо Groups і створюєм 2 групи
 > http://localhost:8000/admin/
 
 ### Групи:
-> admin
+> admin (та присвоюємо йому всі пермішени)
 
 > user
 
-## 6) В Authentication and Authorization  вибираєм User і знаходимо адміна, якого створили в 4 пункті. Міняємо в нього настройки групи, та присвоюємо групу:
+## 4) В Authentication and Authorization  вибираєм Users і знаходимо адміна, якого створили в 2 пункті. Міняємо в нього настройки групи, та присвоюємо групу:
 > admin
 
-## Запускаємо проект
-
->python3 manage.py runserver
