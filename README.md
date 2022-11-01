@@ -5,7 +5,7 @@
 > docker-compose up -d
 
 ## 3) Створюєм суперкористувача, який буде адміном 
-> docker-compose run backend python3 manage.py createsuperuser
+> docker-compose run web python3 manage.py createsuperuser
 
 ## 4) Добавляєм групи через адмінку, заходим по url, використовуючи адміна, створеного в пункті 4 та переходимо на вкладку Authentication and Authorization вибираєм Group і створюєм 2 групи
 
